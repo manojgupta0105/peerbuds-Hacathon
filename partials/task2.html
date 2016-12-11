@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="task1">
+		<div>
+			<table class="table-striped table-bordered table-responsive">
+				<tr>
+					<th width="5%">ID</th>
+					<th width="60%">Comment</th>
+					<th width="5%">Score</th>
+					<th width="5%">View Count</th>
+					<th width="5%">Vote</th>
+				</tr>
+				<tr ng-repeat="data in currentDataSet">
+					<td width="5%">{{data.Id}}</td>
+					<td width="60%" style="overflow: hidden;text-overflow: ellipsis;width: 100px; ">
+						<div ng-bind-html="data.Body"></div>
+					</td>
+					<td width="5%">{{data.Score}}</td>
+					<td width="5%">{{data.ViewCount == undefined ? 0 : data.ViewCount}}</td>
+					<th width="5%">
+						<i class="fa fa-thumbs-up" ng-class="{'votedUp': data.votedUp}" ng-click="voteUp(data)"></i>
+						&nbsp;&nbsp;
+						<i class="fa fa-thumbs-down" ng-class="{'votedDown': data.votedDown}" ng-click="voteDown(data)"</i>
+					</th>
+				</tr>
+			</table>
+			<ul uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" boundary-link-numbers="true" rotate="false" ng-change="pageChanged()"></ul>
+		</div>
+	</div>	
+</div>

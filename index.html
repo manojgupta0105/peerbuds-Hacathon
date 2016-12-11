@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title ng-bind="pageTitle"> </title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/nvd3/nv.d3.css">
+</head>
+<body ng-controller="MainController">
+	<div ui-view></div>
+
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-sanitize.js"></script>
+	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.xml2json.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+	<script src="bower_components/d3/d3.js"></script>
+	<script src="bower_components/nvd3/nv.d3.js"></script> <!-- or use another assembly -->
+	<script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+
+</body>
+</html>

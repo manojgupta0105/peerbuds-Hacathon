@@ -1,0 +1,16 @@
+.home-page {
+  padding-top: 50px; }
+  .home-page .asignment-box {
+    padding: 50px;
+    text-align: center;
+    border: 1px solid #d5d5d5;
+    margin-left: 0px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bolder; }
+
+.votedUp {
+  color: green; }
+
+.votedDown {
+  color: red; }
