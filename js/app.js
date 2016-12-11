@@ -100,9 +100,13 @@ var myApp = angular.module('myApp', ['ngRoute','ui.router','ui.bootstrap','ngTab
 		}
 		if(postData.votedUp){
 			postData.votedDown = false;
+			postData.Score = parseInt(postData.Score) + 1;
+		}
+		else{
+			postData.Score = parseInt(postData.Score) - 1;
 		}
 		SessionService.set("postData",$scope.currentDataSet);
-		console.log(JSON.stringify($scope.currentDataSet));
+		//console.log(JSON.stringify($scope.currentDataSet));
 	}
 	$scope.voteDown = function(postData){
 		if(postData.votedDown == undefined){
@@ -113,7 +117,12 @@ var myApp = angular.module('myApp', ['ngRoute','ui.router','ui.bootstrap','ngTab
 		}
 		if(postData.votedDown){
 			postData.votedUp = false;
+			postData.Score = parseInt(postData.Score) - 1;
 		}
+		else{
+			postData.Score = parseInt(postData.Score) + 1;
+		}
+
 		SessionService.set("postData",$scope.currentDataSet);
 	}
 
@@ -135,6 +144,7 @@ var myApp = angular.module('myApp', ['ngRoute','ui.router','ui.bootstrap','ngTab
 					if(tmpData[i].Id == $scope.currentDataSet[j].Id){
 						$scope.currentDataSet[j].votedUp = tmpData[i].votedUp;
 						$scope.currentDataSet[j].votedDown = tmpData[i].votedDown;
+						$scope.currentDataSet[j].Score = tmpData[i].Score;
 					}
 				}
 			}
@@ -156,7 +166,10 @@ var myApp = angular.module('myApp', ['ngRoute','ui.router','ui.bootstrap','ngTab
 		function(success){
 			$scope.responseData = success.data.posts.row;
 			$scope.totalItems = $scope.responseData.length / 10;
-			$scope.currentDataSet = $scope.responseData.slice((($scope.currentPage - 1) * 10) , 10);
+			$scope.tagWithQuestionCount = {};
+			for(var i =0; i<responseData.length;i++){
+				//responseData[i]
+			}
 		},
 		function(error){
 
